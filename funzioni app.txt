@@ -1,0 +1,46 @@
+Utente(codie, username, password, nome cognome, Indirizzo, data di nascita, email, numero di telefono, livello di studio, anni di esperienza)
+Azienda(codice, username, password, nome azienda, email, numero di telefono, indirizzo)
+Annuncio(codice, tipologia di contratto, orario di lavoro, categoria professionale, tipo di lavoro)
+
+
+1. Signin account (utente normale e azienda)
+
+2. Login account (utente normale e azienda)
+
+3. Modifica account (utente normale e azienda)
+
+4. Delete account (utente normale e azienda)
+
+5. creazione annuncio (solo azienda)
+
+6. modifica annuncio (solo azienda)
+
+7. eliminazione annuncio (solo azienda)
+
+8. segnalazione annuncio (utente normale e azienda)
+
+9. cercare annunci (solo utente normale)
+
+10. filtrare annunci (solo utente normale)
+
+11. 
+
+12. 
+
+13. 
+
+14. 
+
+15. 
+
+16. 
+
+17. 
+
+18. 
+
+19. 
+
+20. 
+
+21. 
