@@ -1,27 +1,77 @@
-Utente(codie, username, password, nome cognome, Indirizzo, data di nascita, email, numero di telefono, livello di studio, anni di esperienza)
+Utente(codice, username, password, nome, cognome, Indirizzo, data di nascita, email, numero di telefono, livello di studio, anni di esperienza)
 Azienda(codice, username, password, nome azienda, email, numero di telefono, indirizzo)
 Annuncio(codice, tipologia di contratto, orario di lavoro, categoria professionale, tipo di lavoro)
 
 
 1. Signin account (utente normale e azienda)
+    1.1 Azienda
+        End Point: /signinazienda POST
+        Input: username, password, nome azienda, email, indirizzo, numero telefono
+        Output:
+    1.2 Utente Normale
+        End Point: /signinutente POST
+        Input: username, password, nome, cognome, data di nascita, email, indirizzo, numero di telefono, livello di studio, anni di esperienza
+        Output:
 
 2. Login account (utente normale e azienda)
+    2.1 Azienda
+        End Point: /loginazienda POST
+        Input: username, password
+        Output:
+    2.2 Utente Normale
+        End Point: /loginutente POST
+        Input: username, password
+        Output:
 
 3. Modifica account (utente normale e azienda)
+    3.1 Azienda
+        End Point: /modificaazienda POST
+        Input: 
+        Output:
+    3.2 Utente Normale
+        End Point: /modificautente POST
+        Input: 
+        Output:
 
 4. Delete account (utente normale e azienda)
+    4.1 Azienda
+        End Point: /deleteazienda POST
+        Input: 
+        Output:
+    4.2 Utente Normale
+        End Point: /deleteutente POST
+        Input: 
+        Output:
 
 5. creazione annuncio (solo azienda)
+    End Point: /creazioneannuncio POST
+    Input: tipologia di contratto, orario di lavoro, categoria professionale, tipo di lavoro
+    Output:
 
 6. modifica annuncio (solo azienda)
+    End Point: /modificaannuncio POST
+    Input: 
+    Output:
 
 7. eliminazione annuncio (solo azienda)
+    End Point: /deleteannuncio POST
+    Input: 
+    Output:
 
-8. segnalazione annuncio (utente normale e azienda)
+8. segnalazione annuncio
+    End Point: /segnalazioneannuncio POST
+    Input: 
+    Output:
 
 9. cercare annunci (solo utente normale)
+    End Point: /cercaannuncio POST
+    Input: 
+    Output:
 
 10. filtrare annunci (solo utente normale)
+    End Point: /filtraannunci POST
+    Input: 
+    Output:
 
 11. 
 
