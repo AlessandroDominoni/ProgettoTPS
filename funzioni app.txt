@@ -73,24 +73,10 @@ Annuncio(codice, tipologia di contratto, orario di lavoro, categoria professiona
     Input: 
     Output:
 
-11. 
-
-12. 
-
-13. 
-
-14. 
-
-15. 
-
-16. 
-
-17. 
-
-18. 
-
-19. 
-
-20. 
-
-21. 
+Altro:
+Condividere annunci (utente)
+contattare azienda (utente)
+creare curriculum (utente)
+inviare richiesta per annuncio (utente)
+visualizzare richiesta (azienda)
+sezione con gli annunci preferiti (utente)
