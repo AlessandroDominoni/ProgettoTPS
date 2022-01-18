@@ -10,8 +10,6 @@ public class LoginAzienda extends HttpServlet{
         Connection connection=null;
         HttpSession session = req.getSession(true);
         PrintWriter printwriter = res.getWriter();
-        RequestDispatcher rd = req.getRequestDispatcher("scegliLinea");
-        res.setContentType("text/html");
        
         try {
             Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
