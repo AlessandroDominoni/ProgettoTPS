@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>
+            Filtra - NOMEAPP
+        </title>
+    </head>
+    <body>
+	<p style="text-align: center;">FILTRA ANNUNCI</p>
+    <p style="text-align: center;">UTENTE</p>
+	<form action="/progetto/filtraannunci" method="post" style="text-align: center;">
+		<select name="tipologiaContratto"  placeholder="Tipologia di Contratto">
+			<option value="determinato">Contratto a tempo determinato</option>
+			<option value="indeterminato">Contratto a tempo indeterminato</option>	
+		<br>
+        <input type="text" name="professione" placeholder="Professione"> <br>
+		<input type="checkbox" name="giorni" placeholder="Giorni">
+			<label for="lun">Lunedì</label><br>
+			<label for="mar">Martedì</label><br>
+			<label for="mer">Mercoledì</label><br>
+			<label for="gio">Giovedì</label><br>
+			<label for="ven">Venerdì</label><br>
+			<label for="sab">Sabato</label><br>
+			<label for="dom">Domenica</label><br>
+		<br>
+        <input type="text" name="inizio" placeholder="Orario Di Inizio"> <br>
+		<input type="text" name="fine" placeholder="Orario di Fine"> <br> <br>
+		<button type="submit">Filtra</button>
+    </form>
+    <a href="home.html">Torna Indiretro</a>
+</body>
+</html>
