@@ -9,7 +9,6 @@ public class SigninUtente extends HttpServlet{
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
         Connection connection=null;
         PrintWriter printwriter = res.getWriter();
-        res.setContentType("text/html");
 
        
         try {
