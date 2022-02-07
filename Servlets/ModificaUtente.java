@@ -30,7 +30,7 @@ public class ModificaUtente extends HttpServlet{
             String livstudio=req.getParameter("studio");
             String esperienza=req.getParameter("esperienza");
             
-            String query = "UPDATE Utente SET password"+password+", nome"+nome+", cognome"+cognome+", indirizzo"+indirizzo+", [data di nascita]"+nascita+", email"+email+", [numero di telefono]"+telefono+", [livello di studio]"+livstudio+", [data di nascita]"+nascita+", [anni di esperienza]"+esperienza+"WHERE username="+username;
+            String query = "UPDATE Utente SET password='"+password+"', nome='"+nome+"', cognome='"+cognome+"', indirizzo='"+indirizzo+"', [data di nascita]='"+nascita+"', email='"+email+"', [numero di telefono]='"+telefono+"', [livello di studio]='"+livstudio+"', [data di nascita]='"+nascita+"', [anni di esperienza]='"+esperienza+"' WHERE username='"+username+"'";
             
             Statement statement = connection.createStatement();
             //ResultSet resultSet = statement.executeQuery(query);
@@ -59,4 +59,3 @@ public class ModificaUtente extends HttpServlet{
         }
     }
 }
-
