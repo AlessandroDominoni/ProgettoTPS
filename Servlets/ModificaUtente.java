@@ -36,10 +36,10 @@ public class ModificaUtente extends HttpServlet{
             //ResultSet resultSet = statement.executeQuery(query);
             
             if(nome != null && email != null && password != null && indirizzo != null && esperienza != null && livstudio != null && telefono != null && cognome != null && nascita != null){
-                if(nome.length() > 0 && email.length() > 0 && password.length() > 0 && indirizzo.length() > 0 && esperienza.length() > 0 && livstudio.length() > 0 && telefono.length() > 0 && cognome.length() > 0 && nascita.length() > 0){
+                
                     statement.executeUpdate(query);
                     res.sendRedirect(req.getContextPath()+"/home.html");
-                }
+                
             }
             else{
                 printwriter.println("<p align='center'>Errore nella modifica del profilo</p> <br> <p><a href='profilo.html'>Torna indietro</a></p>");
