@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app>
+	<servlet>
+		<servlet-name>SigninUtente</servlet-name>
+		<servlet-class>SigninUtente</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SigninUtente</servlet-name>
+		<url-pattern>/signinutente</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginUtente</servlet-name>
+		<servlet-class>LoginUtente</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginUtente</servlet-name>
+		<url-pattern>/loginutente</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>ModificaUtente</servlet-name>
+		<servlet-class>ModificaUtente</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModificaUtente</servlet-name>
+		<url-pattern>/modificautente</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteUtente</servlet-name>
+		<servlet-class>DeleteUtente</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteUtente</servlet-name>
+		<url-pattern>/deleteutente</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>FiltraAnnunci</servlet-name>
+		<servlet-class>FiltraAnnunci</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FiltraAnnunci</servlet-name>
+		<url-pattern>/filtraannunci</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CercaAnnuncio</servlet-name>
+		<servlet-class>CercaAnnuncio</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CercaAnnuncio</servlet-name>
+		<url-pattern>/cercaannuncio</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>SigninAzienda</servlet-name>
+		<servlet-class>SigninAzienda</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SigninAzienda</servlet-name>
+		<url-pattern>/signinazienda</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>LoginAzienda</servlet-name>
+		<servlet-class>LoginAzienda</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginAzienda</servlet-name>
+		<url-pattern>/loginazienda</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ModificaAzienda</servlet-name>
+		<servlet-class>ModificaAzienda</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModificaAzienda</servlet-name>
+		<url-pattern>/modificaazienda</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteAzienda</servlet-name>
+		<servlet-class>DeleteAzienda</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteAzienda</servlet-name>
+		<url-pattern>/deleteazienda</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>CreazioneAnnuncio</servlet-name>
+		<servlet-class>CreazioneAnnuncio</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreazioneAnnuncio</servlet-name>
+		<url-pattern>/creazioneannuncio</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>ModificaAnnuncio</servlet-name>
+		<servlet-class>ModificaAnnuncio</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModificaAnnuncio</servlet-name>
+		<url-pattern>/modificaannuncio</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteAnnuncio</servlet-name>
+		<servlet-class>DeleteAnnuncio</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteAnnuncio</servlet-name>
+		<url-pattern>/deleteannuncio</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<servlet>
+		<servlet-name>SegnalazioneAnnuncio</servlet-name>
+		<servlet-class>SegnalazioneAnnuncio</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SegnalazioneAnnuncio</servlet-name>
+		<url-pattern>/segnalazioneannuncio</url-pattern>
+	</servlet-mapping>
+</web-app>
