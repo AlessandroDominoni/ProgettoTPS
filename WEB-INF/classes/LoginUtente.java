@@ -34,7 +34,7 @@ public class LoginUtente extends HttpServlet{
                 printwriter.println("<p align='center'>Errore di login, credenziali errate</p> <br> <p>Torna alla schermata di <a href='index.html'>login</a></p>");
             }
             else{
-                res.sendRedirect(req.getContextPath()+"/home.html");
+                res.sendRedirect(req.getContextPath()+"/home.jsp");
             }
        } catch (Exception e) {
             System.out.println("Errore: Impossibile Connettersi al Database");
