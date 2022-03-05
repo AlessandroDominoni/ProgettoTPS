@@ -30,7 +30,7 @@ public class ModificaUtente extends HttpServlet{
             if(password != null){
                 
                     statement.executeUpdate(query);
-                    res.sendRedirect(req.getContextPath()+"/home.html");
+                    res.sendRedirect(req.getContextPath()+"/home.jsp");
                 
             }
             else{
