@@ -1,6 +1,8 @@
 <%@page import="java.util.*" %>
 <%@ page import="java.io.*" %>
 <%@ page import="java.sql.*" %>
+<%@ page import="javax.sql.*" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <html>
 	<head>
@@ -13,19 +15,20 @@
 			</tr>
 			<tr style="height: 22px;">
 				<td style="width: 33.3333%; height: 22px;"><a href="profilo.html">PROFILO</a></td>
-				<td style="width: 33.3333%; height: 22px;">CERCA</td>
+				<td style="width: 33.3333%; height: 22px;">
+					<form action="home.jsp" method="post">
+						<input name="cerca" type="text" placeholder="Cerca" style="width: 90%;"/>
+						<button type="submit">O</button>
+					</form>
+				</td>
 				<td style="width: 33.3333%; height: 22px;">FILTRA</td>
 			</tr>
 			<%
-				int[] arrayAnnunci = new int[5];
-				Random r = new Random(); 
-				for(int i=0; i<5; i++){
-					int annuncio = r.nextInt (5);
-					arrayAnnunci [i] = annuncio;
-				}
 				String DRIVER = "net.ucanaccess.jdbc.UcanaccessDriver";
 				Connection connection=null;
-	
+				
+				String c=request.getParameter("cerca");
+				
 				try{
 					Class.forName(DRIVER);
 				}catch (ClassNotFoundException e) {
@@ -33,15 +36,29 @@
 				}
 				try{
 					connection = DriverManager.getConnection("jdbc:ucanaccess://" + request.getServletContext().getRealPath("/") + "Database.accdb");
-					String query = "SELECT * FROM Annunci;"; 
-				
-					Statement st = connection.createStatement();
-					ResultSet result = st.executeQuery(query);
-			
-					while(result.next()){
-						out.println("<tr>");
-						out.println("<td></td><td>Nome Azienda: "+result.getString(2)+"<br>Descrizione: <br>"+result.getString(3)+"</td></td><td>");
-						out.println("</tr>");
+					
+					if(c==null){
+						String query = "SELECT * FROM Annunci;"; 
+						Statement st = connection.createStatement();
+						ResultSet result = st.executeQuery(query);
+						
+						while(result.next()){
+							out.println("<tr>");
+							out.println("<td></td><td>Nome Azienda: "+result.getString(2)+"<br>Descrizione: <br>"+result.getString(3)+"</td></td><td>");
+							out.println("</tr>");
+						}
+					}
+					if(c!=null){
+						String query = "SELECT * FROM Annunci WHERE Nome LIKE '"+c+"%';"; 
+						Statement st = connection.createStatement();
+						ResultSet result = st.executeQuery(query);
+					
+						
+						while(result.next()){
+							out.println("<tr>");
+							out.println("<td></td><td>Nome Azienda: "+result.getString(2)+"<br>Descrizione: <br>"+result.getString(3)+"</td></td><td>");
+							out.println("</tr>");
+						}
 					}
 				}catch(Exception e){
 					out.println(e);
