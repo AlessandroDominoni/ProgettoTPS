@@ -20,6 +20,6 @@
         <button type="submit">login</button>
     </form><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 	-->
-    <a href="signin.html">Create an Account</a>
+    <a href="signin.jsp">Create an Account</a>
 </body>
 </html>
