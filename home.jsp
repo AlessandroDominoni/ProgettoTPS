@@ -14,14 +14,14 @@
 				<td style="width: 100%; height: 22px;" colspan="3">NOME APP</td>
 			</tr>
 			<tr style="height: 22px;">
-				<td style="width: 33.3333%; height: 22px;"><a href="profilo.html">PROFILO</a></td>
+				<td style="width: 33.3333%; height: 22px;"><a href="profilo.jsp">PROFILO</a></td>
 				<td style="width: 33.3333%; height: 22px;">
 					<form action="home.jsp" method="post">
 						<input name="cerca" type="text" placeholder="Cerca" style="width: 90%;"/>
 						<button type="submit">O</button>
 					</form>
 				</td>
-				<td style="width: 33.3333%; height: 22px;">FILTRA</td>
+				<td style="width: 33.3333%; height: 22px;"><a href="filtra.jsp">FILTRA</a></td>
 			</tr>
 			<%
 				String DRIVER = "net.ucanaccess.jdbc.UcanaccessDriver";
