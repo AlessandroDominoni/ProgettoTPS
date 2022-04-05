@@ -10,12 +10,12 @@
 	</servlet-mapping>
 
 	<servlet>
-		<servlet-name>LoginUtente</servlet-name>
-		<servlet-class>LoginUtente</servlet-class>
+		<servlet-name>Login</servlet-name>
+		<servlet-class>Login</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>LoginUtente</servlet-name>
-		<url-pattern>/loginutente</url-pattern>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/login</url-pattern>
 	</servlet-mapping>
 	
 	<servlet>
