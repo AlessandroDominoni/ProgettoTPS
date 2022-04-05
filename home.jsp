@@ -24,6 +24,7 @@
 				<td style="width: 33.3333%; height: 22px;"><a href="filtra.jsp">FILTRA</a></td>
 			</tr>
 			<%
+				
 				String DRIVER = "net.ucanaccess.jdbc.UcanaccessDriver";
 				Connection connection=null;
 				
@@ -37,8 +38,13 @@
 				try{
 					connection = DriverManager.getConnection("jdbc:ucanaccess://" + request.getServletContext().getRealPath("/") + "Database.accdb");
 					
-					if(c==null){
-						String query = "SELECT * FROM Annunci;"; 
+					String username = (String) session.getAttribute("username");
+					String azienda = (String) session.getAttribute("azienda");
+					
+					
+					
+					if(azienda!=null){
+						String query = "SELECT * FROM Annunci WHERE nomeazienda='"+username+"';"; 
 						Statement st = connection.createStatement();
 						ResultSet result = st.executeQuery(query);
 						
@@ -48,16 +54,29 @@
 							out.println("</tr>");
 						}
 					}
-					if(c!=null){
-						String query = "SELECT * FROM Annunci WHERE Nome LIKE '"+c+"%';"; 
-						Statement st = connection.createStatement();
-						ResultSet result = st.executeQuery(query);
-					
+					else{
+						if(c==null){
+							String query = "SELECT * FROM Annunci;"; 
+							Statement st = connection.createStatement();
+							ResultSet result = st.executeQuery(query);
 						
-						while(result.next()){
-							out.println("<tr>");
-							out.println("<td></td><td>Nome Azienda: "+result.getString(2)+"<br>Descrizione: <br>"+result.getString(3)+"</td></td><td>");
-							out.println("</tr>");
+							while(result.next()){
+								out.println("<tr>");
+								out.println("<td></td><td>Nome Azienda: "+result.getString(2)+"<br>Descrizione: <br>"+result.getString(3)+"</td></td><td>");
+								out.println("</tr>");
+							}
+						}
+						if(c!=null){
+							String query = "SELECT * FROM Annunci WHERE nomeazienda LIKE '"+c+"%';"; 
+							Statement st = connection.createStatement();
+							ResultSet result = st.executeQuery(query);
+					
+							
+							while(result.next()){
+								out.println("<tr>");
+								out.println("<td></td><td>Nome Azienda: "+result.getString(2)+"<br>Descrizione: <br>"+result.getString(3)+"</td></td><td>");
+								out.println("</tr>");
+							}
 						}
 					}
 				}catch(Exception e){
