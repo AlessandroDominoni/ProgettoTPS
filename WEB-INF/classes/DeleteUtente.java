@@ -19,24 +19,18 @@ public class DeleteUtente extends HttpServlet{
         try {
             connection = DriverManager.getConnection("jdbc:ucanaccess://" + req.getServletContext().getRealPath("/") + "Database.accdb");
            
-            String username=req.getParameter("username");
-            
             String password=req.getParameter("password");
+            String id=session.getAttribute("id").toString();
             
-            String query = "DELETE FROM Utenti WHERE (username = '"+username+"' AND password='"+password+"');";
+            String query = "DELETE FROM Utenti WHERE ID='"+id+"';";
             Statement statement = connection.createStatement();
-            /*ResultSet resultSet = statement.executeQuery(query);
-            String risultato=null;
-            while(resultSet.next()){
-                risultato=resultSet.getString(1);
-            }*/
             
-            if(password==null){
-                printwriter.println("<p align='center'>Errore nell'eliminazione</p> <br> <p><a href='index.jsp'>Torna Indietro</a></p>");
-            }
-            else{
+            if(password=="CONFERMA" || password=="conferma"){
                 statement.executeUpdate(query);
                 res.sendRedirect(req.getContextPath()+"/index.jsp");
+            }
+            else{
+                printwriter.println("<p align='center'>Errore nell'eliminazione</p> <br> <p><a href='profilo.jsp'>Torna Indietro</a></p>");
             }
         } catch (Exception e) {
             System.out.println("Errore: Impossibile Connettersi al Database");
@@ -52,4 +46,3 @@ public class DeleteUtente extends HttpServlet{
            }
         }
     }
-}
