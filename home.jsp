@@ -20,21 +20,31 @@
 					String azienda = (String) session.getAttribute("azienda");
 					out.println("<p>Benvenuto "+username+"</p>");
 				%>
-		<table style="border-collapse: collapse; width: 100%; height: 154px;" border="1"><tbody>
+		<table style="border-collapse: collapse; width: 100%; max-width:100%; height: 154px;" border="1"><tbody>
 			<tr style="height: 22px;">
-				<td style="width: 20%; height: 22px;"><a href="profilo.jsp">PROFILO</a></td>
-				<td style="width: 60%; height: 22px;" colspan="2">
-					<form action="home.jsp" method="post">
-						<input name="cerca" type="text" placeholder="Cerca" style="width: 90%;"/>
-						<button type="submit"  style="width: 9%;">O</button>
-					</form>
+				<td style="width: 15%; height: 22px;"><a href="profilo.jsp">PROFILO</a></td>
+				<td style="width: 70%; height: 22px;" colspan="2">
+				<%
+					if(azienda!=null){
+						out.println("<form action='home.jsp' method='post'>");
+							out.println("<button type='submit'  style='width: 99%;'>O</button>");
+						out.println("</form>");
+					}
+					else{
+						out.println("<form action='home.jsp' method='post'>");
+							out.println("<input name='cerca' type='text' placeholder='Cerca' style='width: 90%;'/>");
+							out.println("<button type='submit'  style='width: 9%;'>O</button>");
+						out.println("</form>");
+					}
+					
+				%>
 				</td>
 				<%
 					if(azienda!=null){
-						out.println("<td style='width: 25%; height: 22px;'><a href='create.jsp'>CREA ANNUNCIO</a></td>");
+						out.println("<td style='width: 15%; height: 22px;'><a href='create.jsp'>CREA ANNUNCIO</a></td>");
 					}
 					else{
-						out.println("<td style='width: 25%; height: 22px;'><a href='filtra.jsp'>FILTRA</a></td>");
+						out.println("<td style='width: 15%; height: 22px;'><a href='filtra.jsp'>FILTRA</a></td>");
 					}
 				%>
 			</tr>
@@ -60,9 +70,11 @@
 						
 						while(result.next()){
 							out.println("<tr>");
-							out.println("<td><td style='width: 50%; height: 22px;'>Nome Azienda: "+result.getString(2)+"<br>Descrizione: <br>"+result.getString(3)+"</td>");
-							out.println("<td><button onclick='location.href='modann.jsp'>MODIFICA</button><br>");
-							out.println("<form action='/progetto1/deleteannuncio' method='post'><button type='submit'>ELIMINA</button></form></td></td>");
+							out.println("<td></td>");
+							out.println("<td style=' max-width: 62%; ' >Nome Azienda: "+result.getString(2)+"<br>Paga: "+result.getString(3)+"<br>Orario: "+result.getString(4)+"<br>Professione: "+result.getString(5)+"<br>Descrizione: <br>aaaaaaaaaaaaa</td>");
+							out.println("<td style='width: 8%; height: 22px;'><button onclick='location.href='modann.jsp'>MODIFICA</button><br>");
+							out.println("<form action='/progetto1/deleteannuncio' method='post'><button type='submit'>ELIMINA</button></form></td>");
+							out.println("<td></td>");
 							out.println("</tr>");
 							String id=result.getString(1);
 							session.setAttribute("id", id);
@@ -76,7 +88,8 @@
 						
 							while(result.next()){
 								out.println("<tr>");
-								out.println("<td></td><td>Nome Azienda: "+result.getString(2)+"<br>Descrizione: <br>"+result.getString(3)+"</td></td><td>");
+								out.println("<td></td>");
+								out.println("<td style=' max-width: 62%;'>Nome Azienda: "+result.getString(2)+"<br>Paga: "+result.getString(3)+"<br>Orario: "+result.getString(4)+"<br>Professione: "+result.getString(5)+"<br>Descrizione: <br>aaaaaaaaaaaaa</td>");
 								out.println("</tr>");
 							}
 						}
@@ -88,7 +101,8 @@
 							
 							while(result.next()){
 								out.println("<tr>");
-								out.println("<td></td><td>Nome Azienda: "+result.getString(2)+"<br>Descrizione: <br>"+result.getString(3)+"</td></td><td>");
+								out.println("<td></td>");
+								out.println("<td style=' max-width: 62%; '>Nome Azienda: "+result.getString(2)+"<br>Paga: "+result.getString(3)+"<br>Orario: "+result.getString(4)+"<br>Professione: "+result.getString(5)+"<br>Descrizione: <br>aaaaaaaaaaaaa</td>");
 								out.println("</tr>");
 							}
 						}
@@ -101,7 +115,9 @@
 					if(connection != null){
 						try{
 							connection.close();
-						}catch(Exception e){out.println("La connessione non è stata chiusa correttamente...");}
+						}catch(Exception e){
+							out.println("La connessione non è stata chiusa correttamente...");
+						}
 					}
 				}
 			%>
