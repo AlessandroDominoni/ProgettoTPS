@@ -20,13 +20,16 @@ public class DeleteUtente extends HttpServlet{
             connection = DriverManager.getConnection("jdbc:ucanaccess://" + req.getServletContext().getRealPath("/") + "Database.accdb");
            
             String password=req.getParameter("password");
-            String id=session.getAttribute("id").toString();
+            String username = (String) session.getAttribute("username");
             
-            String query = "DELETE FROM Utenti WHERE ID='"+id+"';";
+            String query = "DELETE FROM Utenti WHERE username='"+username+"';";
+            String query1= "DELETE FROM Annunci WHERE nomeazienda='"+username+"';";
             Statement statement = connection.createStatement();
-            
-            if(password=="CONFERMA" || password=="conferma"){
+            Statement statement1 = connection.createStatement();
+            //printwriter.println(password);
+            if(password.equals("CONFERMA") || password.equals("conferma")){
                 statement.executeUpdate(query);
+                statement1.executeUpdate(query1);
                 res.sendRedirect(req.getContextPath()+"/index.jsp");
             }
             else{
