@@ -72,7 +72,7 @@
 							out.println("<tr>");
 							out.println("<td></td>");
 							out.println("<td style=' max-width: 62%; ' >Nome Azienda: "+result.getString(2)+"<br>Paga: "+result.getString(3)+"<br>Orario: "+result.getString(4)+"<br>Professione: "+result.getString(5)+"<br>Descrizione: <br>aaaaaaaaaaaaa</td>");
-							out.println("<td style='width: 8%; height: 22px;'><button onclick='location.href='modann.jsp'>MODIFICA</button><br>");
+							out.println("<td style='width: 8%; height: 22px;'><button><a href='modann.jsp'  style='text-decoration: none'>MODIFICA</a></button><br>");
 							out.println("<form action='/progetto1/deleteannuncio' method='post'><button type='submit'>ELIMINA</button></form></td>");
 							out.println("<td></td>");
 							out.println("</tr>");
