@@ -1,0 +1,24 @@
+Correzione Database
+
+
+	Annunci
+		contratto-->stipendio e no valuta ma numerico
+		requisiti
+		orario-->ora inizio
+	 		 -->ora fine 
+		pausa
+		parole chiave ricerca
+		data creazione
+
+
+	Utenti
+		username chiave
+		data creazione
+
+
+
+modifiche codice
+	dare un valore al td che aumento e passarlo 
+	cambiare i tipi di input
+	NEGLI ANNUNCI AGLI UTENTI MOSTARE INFO AZIENDA 
+	giiungere collegamento a chat e preferti
